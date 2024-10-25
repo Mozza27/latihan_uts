@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Produk</title>
+</head>
+<body>
+    <h1>Edit Produk</h1>
+    <form action="/produk/update/<%= produk._id %>" method="POST">
+        <input type="text" name="nama" value="<%= produk.nama %>" required>
+        <input type="text" name="deskripsi" value="<%= produk.deskripsi %>" required>
+        <input type="number" name="harga" value="<%= produk.harga %>" required>
+        <input type="number" name="stok" value="<%= produk.stok %>" required>
+        <input type="text" name="kategori_id" value="<%= produk.kategori_id %>" required>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

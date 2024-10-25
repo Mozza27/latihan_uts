@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Produk</title>
+</head>
+<body>
+    <h1>Daftar Produk</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Deskripsi</th>
+                <th>Harga</th>
+                <th>Stok</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% produk.forEach(item => { %>
+                <tr>
+                    <td><%= item.nama %></td>
+                    <td><%= item.deskripsi %></td>
+                    <td><%= item.harga %></td>
+                    <td><%= item.stok %></td>
+                    <td>
+                        <a href="/produk/edit/<%= item._id %>">Edit</a>
+                        <a href="/produk/delete/<%= item._id %>">Hapus</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <h2>Tambah Produk</h2>
+    <form action="/produk" method="POST">
+        <input type="text" name="nama" placeholder="Nama" required>
+        <input type="text" name="deskripsi" placeholder="Deskripsi" required>
+        <input type="number" name="harga" placeholder="Harga" required>
+        <input type="number" name="stok" placeholder="Stok" required>
+        <input type="text" name="kategori_id" placeholder="Kategori ID" required>
+        <button type="submit">Tambah</button>
+    </form>
+</body>
+</html>
